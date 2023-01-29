@@ -13,12 +13,13 @@ in html
 <!-- All styles and javascript go inside the head -->
     <head>
         <meta char="utf-8" />
-        <title>Contact Us @ SLFA</title>
+        <title>Leave a Feedback @ SLFA</title>
         <style>
         @import url("css/footer.css");
         @import url("css/contact.css");
+        @import url("css/feedback.css");
+        @import url("css/styles.css");     
       </style>
-       <link href="css/styles.css" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
       <link rel = "shortcut icon" href = "/images/Logo.PNG" type = "image/x-icon">
       <meta charset="UTF-8">
@@ -28,10 +29,9 @@ in html
     <link rel="stylesheet" href="./style-Footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="shortcut icon" href = "/images/Logo.PNG" type="image/x-icon">
-    <link rel="stylesheet" href="./style-Contact.css">
-    <title>Contact Us @ SLFA</title>
+    <link rel="stylesheet" href="./feedback.css">
     <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="./script-Contact.js" defer></script>
+    <script src="./script.js" defer></script>
     </head>
 <!-- closing head -->
 
@@ -40,44 +40,73 @@ in html
     <body>
         <br>
         <center><img class="logo" src="/images/Logo.PNG"/></center>
-      <br>
+        <br>
         <nav class="top-nav">
             <a href="index.html">Home</a>
             <a href="about.html">Blog</a>
-          <span class="active"><a href="contact.html">Contact Us</a></span>
-          <span><a href="feedback.html">Feedback</a></span>
+          <span><a href="contact.html">Contact Us</a></span>
+          <span class="active"><a href="feedback.html">Feedback</a></span>
         </nav>
       <br>
       <hr>
       <br /><br />
-     <div class="container">
-        <h1 class="contact-title">Contact Us</h1>
-        <form id = "form">
-            <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Name</label>
-                <input type="text" class="form-control style__border" id="recipient-name" required autofocus>
+
+<header class="d-flex justify-content-between align-items-center">
+        <a href="./index.html" class="d-flex align-items-center"><h1 class = "text-success">Feedback</h1></a>
+    </header>
+    <label for="" class = "fs-6 mt-3">Required fields are marked by *.</label>
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="row g-3 align__input">
+            <div class="form-group d-flex align-items-center">
+              <label for="inputFirstName" class="form-label fs-4 text-nowrap align__label">First Name</label>
+              <input type="text" class="form-control fs-6" placeholder="First name" aria-label="First name" autofocus>
             </div>
-            <div class="mb-3">
-                <label for="recipient-email" class="col-form-label">Email Address</label>
-                <input type="email" class="form-control style__border" id="recipient-email" required autofocus>
+            <div class="form-group d-flex align-items-center">
+              <label for="inputLastName" class="form-label fs-4 text-nowrap align__label">Last Name</label>
+              <input type="text" class="form-control fs-6" placeholder="Last name" aria-label="Last name">
             </div>
-            <div class="mb-3">
-                <label for="message-text" class="col-form-label">Message</label>
-                <textarea class="form-control style__border" rows = "3" id="message-text"></textarea>
+            <div class="form-group d-flex align-items-center">
+                <label for="inputEmail4" class="form-label fs-4 align__label">Email*</label>
+                <input type="email" class="form-control fs-6" placeholder="name@example.com" id="inputEmail4" name="email" aria-label="Email" required>
             </div>
-            <div class="mb-3">
-                <h6 id="message-response"> </h6>
-                <button type="submit" class="btn button__green" id = "send-button">Send message</button>
-                <button type="button" class="btn button__green" data-bs-dismiss="modal">Close</button>
-            </div>
-        </form>
+
         </div>
-       <br><br>
-        <hr>
-        <br><br>
-        <!-- This is the footer -->
-        <!-- The footer goes inside the body but not always -->
-           <footer class="footer" role="contentinfo">
+
+        <div class="row g-3">
+            <div class="form-group d-flex align-items-center">
+                <label for="age" class = "fs-4 text-nowrap mr-2 align__label">Please select your age !!</label>
+                <div class="form-floating">
+                    <select class="form-select p-3 fs-5 align__select" id="floatingSelectGrid" aria-label="Floating label select example">
+                        <option selected>Choose one</option>
+                        <option value="1">Under 18</option>
+                        <option value="2">Between 18 - 50</option>
+                        <option value="3">Above 50</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group d-flex">
+            <label for="star" class="fs-5 ms-1 align__label">Are you satisfied with the experience?</label>
+            <div class="form-check form-switch ms-5">
+                <input class="form-check-input fs-2" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+            </div>
+        </div>
+        <div class="">
+            <label for="floatingTextarea2 align__label" class = "fs-4">*  Please leave a message </label>
+            <textarea class="form-control w-50 fs-6" placeholder="Leave a comment here" id="floatingTextarea2" rows="4" cols="50" required></textarea>
+        </div>
+        <div id="message" class="alert alert-danger d-none" role="alert"></div>
+        <div class="col-12 fs-3 text-left">
+          <button class="btn btn-success ms-3 p-3 align_btn fw-bold" id = "submit-button" type="submit">Submit</button>
+          <button class="btn btn-success ms-3 p-3 align_btn fw-bold" id = "reset-button" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <br><br>
+      <hr>
+      <br><br>
+      <footer class="footer" role="contentinfo">
             <nav class="footer_nav">
                 <ul class="footernav_list">
                     <li class="footernav_item"> Connect With Us
@@ -102,9 +131,5 @@ in html
             </nav>
             <p class="footercopyright">Copyright &copy; 2023 All rights reserved.</p>
         </footer>
-
-        
-    </body>
-    <!-- closing body -->
-
+</body>
 </html>
